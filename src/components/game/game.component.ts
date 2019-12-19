@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-let question: Element;
+let question: HTMLElement;
 let choices = [];
-let questionCounterText: Element;
-let scoreText: Element;
+let questionCounterText: HTMLElement;
+let scoreText: HTMLElement;
 
 let score = 0;
 let questionCounter = 0;
+let currentQuestion;
 let acceptingAnswers = false;
-let currentQuestion = {};
 let availableQuestions = [];
 
 const questions = [
@@ -58,11 +58,11 @@ export class GameComponent implements OnInit {
 
     this.startGame();
     choices.forEach(choice => {
-      choice.addEventListener('click', e => {
+      choice.addEventListener('click', element => {
         if (!acceptingAnswers) { return; }
 
         acceptingAnswers = false;
-        const selectedChoice = e.target;
+        const selectedChoice = element.target;
         const selectedAnswer = selectedChoice.dataset['number'];
 
         const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
@@ -109,8 +109,8 @@ export class GameComponent implements OnInit {
     question.innerText = currentQuestion.question;
 
     choices.forEach( choice => {
-      const number = choice.dataset['number'];
-      choice.innerText = currentQuestion['choice' + number];
+      const choiceNumber = choice.dataset['number'];
+      choice.innerText = currentQuestion['choice' + choiceNumber];
     });
 
     availableQuestions.splice(questionIndex, 1);
@@ -120,7 +120,7 @@ export class GameComponent implements OnInit {
 
   incrementScore = num => {
     score += num;
-    scoreText.innerText = score;
+    scoreText.innerText = String(score);
   }
 
 }
