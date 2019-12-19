@@ -13,27 +13,27 @@ let availableQuestions = [];
 
 const questions = [
   {
-    question: 'Inside which HTML element do we put the JavaScript?',
-    choice1: '<script>',
-    choice2: '<javascript>',
-    choice3: '<js>',
-    choice4: '<scripting>',
+    question: 'Wie kann man den Begriff Bedürfnis definieren?',
+    choice1: 'Ein Bedürfnis ist eine Mangelerscheinung mit dem Ziel diese zu beseitigen',
+    choice2: 'Ein Bedürfnis ist die Nachfrage nach einem beliebigem Gut',
+    choice3: 'Ein Bedürfnis entsteht durch die Nachfrage',
+    choice4: 'Ein Bedürfnis ist etwas was Menschen wollen',
     answer: 1
   },
   {
-    question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+    question: "Wie werden aus einem Bedürfnis der Bedarf und daraus die Nachfrage?",
     choice1: "<script href='xxx.js'>",
     choice2: "<script name='xxx.js'>",
-    choice3: "<script src='xxx.js'>",
+    choice3: "Das Bedürfnis muss realisierbar sein. Dazu zählt, dass das Gut auf dem Markt vorhanden ist und der Kunde es sich leisten kann. Durch Kaufentschluss wird der Bedarf zur Nachfrage.",
     choice4: "<script file='xxx.js'>",
     answer: 3
   },
   {
-    question: "How do you write 'Hello World' in an alert box?",
+    question: "Was besagt das Ökonomische Prinzip?",
     choice1: "msgBox('Hello World');",
     choice2: "alertBox('Hello World');",
     choice3: "msg('Hello World');",
-    choice4: "alert('Hello World');",
+    choice4: "Dass eine vorbestimmte Leistung mit möglichst geringen Mitteln erzielt werden soll, dabei aber die größtmögliche Leistung mit minimalen Mitteln",
     answer: 4
   }
 ];
