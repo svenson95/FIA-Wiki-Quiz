@@ -122,8 +122,13 @@
               "devServerTarget": "wiki-quiz:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "wiki-quiz"
 }
