@@ -2,21 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import lf1_questions from "../../data/lf1-questions";
 
 let question: HTMLElement;
+let currentQuestion;
 let choices = [];
-let progressText: HTMLElement;
-let progressBarFull: HTMLElement;
+let availableQuestions = [];
+let acceptingAnswers = false;
 
 let mistakeCounterElement: HTMLElement;
-let mistakeCounter = 0;
 let questionCounterElement: HTMLElement;
+let mistakeCounter = 0;
 let questionCounter = 0;
 
-let currentQuestion;
-let acceptingAnswers = false;
-let availableQuestions = [];
-
-const FAILURE_VALUE = 1;
-const MAX_QUESTIONS = 4;
+let progressBar: HTMLElement;
 
 @Component({
   selector: 'app-game',
@@ -32,27 +28,31 @@ export class GameComponent implements OnInit {
     choices = Array.from(document.getElementsByClassName('choice-text'));
 
     this.startGame();
+
     choices.forEach(choice => {
+
       choice.addEventListener('click', element => {
 
         if (!acceptingAnswers) { return; }
-
         acceptingAnswers = false;
-        const selectedChoice = element.target;
-        const selectedAnswer = selectedChoice.dataset['number'];
 
-        const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+        const selectedElement = element.target;
+        const selectedAnswer = selectedElement.dataset['number'];
 
-        if (classToApply === 'incorrect') {
-          this.incrementFailures(FAILURE_VALUE);
+        const correctClass = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+        if (correctClass === 'incorrect') {
+          this.incrementMistakes(1);
         }
 
-        selectedChoice.parentElement.classList.add(selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect');
+        selectedElement.parentElement.classList.add(selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect');
 
         setTimeout( () => {
+
           this.getNewQuestion();
-          selectedChoice.parentElement.classList.remove(classToApply);
+          selectedElement.parentElement.classList.remove(correctClass);
           window.scrollTo({left: 0 , top: 125, behavior: 'smooth'});
+
         }, 1000);
 
       });
@@ -70,7 +70,7 @@ export class GameComponent implements OnInit {
 
   getNewQuestion = () => {
 
-    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS ) {
+    if (availableQuestions.length === 0 || questionCounter >= lf1_questions.length) {
       // Got to the end page
       localStorage.setItem('mistakeCounterScore', String(mistakeCounter));
       return window.location.assign('end');
@@ -78,16 +78,16 @@ export class GameComponent implements OnInit {
 
     mistakeCounterElement = document.getElementById('score');
     questionCounterElement = document.getElementById('questionCounter');
-    progressText = document.getElementById('progressText');
     question = document.getElementById('question');
 
     questionCounter++;
-    questionCounterElement.innerText = `${questionCounter} / ${MAX_QUESTIONS}`;
+    questionCounterElement.innerText = `${questionCounter} / ${lf1_questions.length}`;
 
     // Update progress bar value
-    progressBarFull = document.getElementById('progress');
-    progressBarFull.style.width = `${((questionCounter - 1) / MAX_QUESTIONS) * 100}%`;
+    progressBar = document.getElementById('progress');
+    progressBar.style.width = `${((questionCounter - 1) / lf1_questions.length) * 100}%`;
 
+    // Random question order
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
@@ -97,12 +97,12 @@ export class GameComponent implements OnInit {
       choice.innerText = currentQuestion['choice' + choiceNumber];
     });
 
+    // Delete answered question
     availableQuestions.splice(questionIndex, 1);
-
     acceptingAnswers = true;
   };
 
-  incrementFailures = num => {
+  incrementMistakes = num => {
     mistakeCounter += num;
     mistakeCounterElement.innerText = String(mistakeCounter);
   };
