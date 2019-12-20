@@ -101,8 +101,8 @@ h3 {
   padding: 0 1.5rem;
 
   @include from-xs {
-    margin-top: 2rem;
-    padding: 0 1.5rem;
+     margin-top: 2rem;
+     padding: 0 1.5rem;
   }
 
   a {
@@ -241,4 +241,3 @@ h3 {
 #hud-item {
   vertical-align: middle;
 }
-

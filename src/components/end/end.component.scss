@@ -8,6 +8,14 @@
   margin-top: 2rem;
 }
 
+.container__header {
+
+  @include from-xs {
+    margin-top: 0rem;
+  }
+
+}
+
 #progressBar {
   max-width: 80rem;
   width: 100%;
@@ -39,12 +47,14 @@
 
 .congratEmoji {
   margin-bottom: 2rem;
+  font-size:100px
 }
 
 /* HUD */
 
 #hud {
   display: flex;
+  justify-content: center;
 }
 
 .hud-prefix {

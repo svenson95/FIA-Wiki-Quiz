@@ -1,50 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import lf1_questions from "../../data/lf1-questions";
 
 let question: HTMLElement;
 let choices = [];
 let progressText: HTMLElement;
 let progressBarFull: HTMLElement;
 
-let failuresCounterText: HTMLElement;
-let failureCounter = 0;
-let questionCounterText: HTMLElement;
+let mistakeCounterElement: HTMLElement;
+let mistakeCounter = 0;
+let questionCounterElement: HTMLElement;
 let questionCounter = 0;
 
 let currentQuestion;
 let acceptingAnswers = false;
 let availableQuestions = [];
 
-const questions = [
-  {
-    question: 'Wie kann man den Begriff Bedürfnis definieren?',
-    choice1: 'Ein Bedürfnis ist eine Mangelerscheinung mit dem Ziel diese zu beseitigen',
-    choice2: 'Ein Bedürfnis ist die Nachfrage nach einem beliebigem Gut',
-    choice3: 'Ein Bedürfnis entsteht durch die Nachfrage',
-    choice4: 'Ein Bedürfnis ist etwas was Menschen wollen',
-    answer: 1
-  },
-  {
-    question: "Wie wird aus einem Bedürfnis der Bedarf und daraus die Nachfrage?",
-    choice1: "<script href='xxx.js'>",
-    choice2: "<script name='xxx.js'>",
-    choice3: "Das Bedürfnis muss realisierbar sein. Dazu zählt, dass das Gut auf dem Markt vorhanden ist und der Kunde es sich leisten kann. Durch Kaufentschluss wird der Bedarf zur Nachfrage.",
-    choice4: "<script file='xxx.js'>",
-    answer: 3
-  },
-  {
-    question: "Was besagt das Ökonomische Prinzip?",
-    choice1: "msgBox('Hello World');",
-    choice2: "alertBox('Hello World');",
-    choice3: "msg('Hello World');",
-    choice4: "Dass eine vorbestimmte Leistung mit möglichst geringen Mitteln erzielt werden soll, dabei aber die größtmögliche Leistung mit minimalen Mitteln",
-    answer: 4
-  }
-];
-
-// CONSTANTS
-
 const FAILURE_VALUE = 1;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 4;
 
 @Component({
   selector: 'app-game',
@@ -90,8 +62,8 @@ export class GameComponent implements OnInit {
 
   startGame = () => {
     questionCounter = 0;
-    failureCounter = 0;
-    availableQuestions = [ ... questions];
+    mistakeCounter = 0;
+    availableQuestions = [ ... lf1_questions];
     this.getNewQuestion();
     window.scrollTo({left: 0 , top: 125, behavior: 'smooth'});
   };
@@ -100,17 +72,17 @@ export class GameComponent implements OnInit {
 
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS ) {
       // Got to the end page
-      localStorage.setItem('mistakeCounterScore', String(failureCounter));
+      localStorage.setItem('mistakeCounterScore', String(mistakeCounter));
       return window.location.assign('end');
     }
 
-    failuresCounterText = document.getElementById('score');
-    questionCounterText = document.getElementById('questionCounter');
+    mistakeCounterElement = document.getElementById('score');
+    questionCounterElement = document.getElementById('questionCounter');
     progressText = document.getElementById('progressText');
     question = document.getElementById('question');
 
     questionCounter++;
-    questionCounterText.innerText = `${questionCounter} / ${MAX_QUESTIONS}`;
+    questionCounterElement.innerText = `${questionCounter} / ${MAX_QUESTIONS}`;
 
     // Update progress bar value
     progressBarFull = document.getElementById('progress');
@@ -131,8 +103,8 @@ export class GameComponent implements OnInit {
   };
 
   incrementFailures = num => {
-    failureCounter += num;
-    failuresCounterText.innerText = String(failureCounter);
+    mistakeCounter += num;
+    mistakeCounterElement.innerText = String(mistakeCounter);
   };
 
 }
