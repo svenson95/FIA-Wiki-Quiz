@@ -69,6 +69,7 @@ h3 {
 
   @include to-xs {
     font-size: 2.5rem;
+    margin: 0 10px;
   }
 }
 
@@ -81,10 +82,11 @@ h3 {
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 1.5rem;
 
   @include from-xs {
     margin-top: 2rem;
+    padding: 0 0;
   }
 
   a {
@@ -107,7 +109,8 @@ h3 {
     position: relative;
 
     @include to-xs {
-      margin: 0 auto;
+      justify-content: space-evenly;
+      width: 100%;
     }
   }
 
@@ -123,10 +126,10 @@ h3 {
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 3rem 0;
 
   @include to-xs {
-    padding: 3rem 3rem;
+    padding: 3rem 1.5rem;
   }
 }
 

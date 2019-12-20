@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 let question: HTMLElement;
 let choices = [];
 let questionCounterText: HTMLElement;
-let scoreText: HTMLElement;
+let failuresText: HTMLElement;
 
-let score = 0;
+let failureCounter = 0;
 let questionCounter = 0;
 let currentQuestion;
 let acceptingAnswers = false;
@@ -40,7 +40,7 @@ const questions = [
 
 // CONSTANTS
 
-const CORRECT_BONUS = 10;
+const FAILURE_VALUE = 1;
 const MAX_QUESTIONS = 3;
 
 @Component({
@@ -59,6 +59,7 @@ export class GameComponent implements OnInit {
     this.startGame();
     choices.forEach(choice => {
       choice.addEventListener('click', element => {
+
         if (!acceptingAnswers) { return; }
 
         acceptingAnswers = false;
@@ -67,11 +68,11 @@ export class GameComponent implements OnInit {
 
         const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
-        if (classToApply === 'correct') {
-          this.incrementScore(CORRECT_BONUS);
+        if (classToApply === 'incorrect') {
+          this.incrementFailures(FAILURE_VALUE);
         }
 
-        selectedChoice.parentElement.classList.add(classToApply);
+        selectedChoice.parentElement.classList.add(selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect');
 
         setTimeout( () => {
           this.getNewQuestion();
@@ -85,10 +86,10 @@ export class GameComponent implements OnInit {
 
   startGame = () => {
     questionCounter = 0;
-    score = 0;
+    failureCounter = 0;
     availableQuestions = [ ... questions];
     this.getNewQuestion();
-  }
+  };
 
   getNewQuestion = () => {
 
@@ -97,7 +98,7 @@ export class GameComponent implements OnInit {
       return window.location.assign('/end.html');
     }
 
-    scoreText = document.getElementById('score');
+    failuresText = document.getElementById('score');
     questionCounterText = document.getElementById('questionCounter');
     question = document.getElementById('question');
 
@@ -116,11 +117,11 @@ export class GameComponent implements OnInit {
     availableQuestions.splice(questionIndex, 1);
 
     acceptingAnswers = true;
-  }
+  };
 
-  incrementScore = num => {
-    score += num;
-    scoreText.innerText = String(score);
+  incrementFailures = num => {
+    failureCounter += num;
+    failuresText.innerText = String(failureCounter);
   }
 
 }
