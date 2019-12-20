@@ -1,1 +1,55 @@
-<p>end works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <title>Congrats!</title>
+  </head>
+  <body>
+    <div class="container">
+<!--      <div id="end" class="flex-center flex-column">-->
+<!--        <div id="hud">-->
+<!--          <div id="hud-item">-->
+<!--            <p class="hud-prefix">-->
+<!--              Fehler-->
+<!--            </p>-->
+<!--            <h1 class="hud-main-text" id="score">-->
+<!--              <p id="resultFailureCounter">0</p>-->
+<!--            </h1>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+      <div class="container__header">
+        <div class="menu flex-column">
+          <a class="btn" routerLink="/game" routerLinkActive="active">Neustarten</a>
+          <h2 id="quizTitle" title>Lernfeld 1 Quiz</h2>
+        </div>
+        <div id="hud">
+          <div id="hud-item">
+            <p class="hud-prefix">
+              Fehler
+            </p>
+            <h1 class="hud-main-text" id="score">
+              0
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div id="progressBar">
+        <div class="progressFull">
+          <div id="progress">
+            <!-- <p id="progressText"></p> -->
+          </div>
+        </div>
+      </div>
+      <div class="congratContainer">
+        <h2 class="done">Fertig!</h2>
+        <h3 class="congratText text-center">
+          Du hast den Quiz ohne Fehler abgeschlossen
+        </h3>
+        <p class="congratEmoji text-center" style="font-size:100px">&#11088;</p>
+      </div>
+    </div>
+  </body>
+</html>

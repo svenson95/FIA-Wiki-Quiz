@@ -24,7 +24,7 @@ const questions = [
     answer: 1
   },
   {
-    question: "Wie werden aus einem Bedürfnis der Bedarf und daraus die Nachfrage?",
+    question: "Wie wird aus einem Bedürfnis der Bedarf und daraus die Nachfrage?",
     choice1: "<script href='xxx.js'>",
     choice2: "<script name='xxx.js'>",
     choice3: "Das Bedürfnis muss realisierbar sein. Dazu zählt, dass das Gut auf dem Markt vorhanden ist und der Kunde es sich leisten kann. Durch Kaufentschluss wird der Bedarf zur Nachfrage.",
@@ -80,9 +80,8 @@ export class GameComponent implements OnInit {
         setTimeout( () => {
           this.getNewQuestion();
           selectedChoice.parentElement.classList.remove(classToApply);
-          const titleElement = document.querySelector('menu');
-          window.scrollTo({left: 0 , top: 80, behavior: 'smooth'});
-        }, 1500);
+          window.scrollTo({left: 0 , top: 125, behavior: 'smooth'});
+        }, 1000);
 
       });
     });
@@ -94,14 +93,15 @@ export class GameComponent implements OnInit {
     failureCounter = 0;
     availableQuestions = [ ... questions];
     this.getNewQuestion();
-    window.scrollTo({left: 0 , top: 80, behavior: 'smooth'});
+    window.scrollTo({left: 0 , top: 125, behavior: 'smooth'});
   };
 
   getNewQuestion = () => {
 
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS ) {
       // Got to the end page
-      return window.location.assign('/end.html');
+      localStorage.setItem('mistakeCounterScore', String(failureCounter));
+      return window.location.assign('/end');
     }
 
     failuresCounterText = document.getElementById('score');
@@ -113,8 +113,8 @@ export class GameComponent implements OnInit {
     questionCounterText.innerText = `${questionCounter} / ${MAX_QUESTIONS}`;
 
     // Update progress bar value
-    progressBarFull = document.getElementById('progressBarFull');
-    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+    progressBarFull = document.getElementById('progress');
+    progressBarFull.style.width = `${((questionCounter - 1) / MAX_QUESTIONS) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -128,12 +128,11 @@ export class GameComponent implements OnInit {
     availableQuestions.splice(questionIndex, 1);
 
     acceptingAnswers = true;
-    document.documentElement.scrollTop = 20;
   };
 
   incrementFailures = num => {
     failureCounter += num;
     failuresCounterText.innerText = String(failureCounter);
-  }
+  };
 
 }
