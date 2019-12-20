@@ -101,7 +101,7 @@ export class GameComponent implements OnInit {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS ) {
       // Got to the end page
       localStorage.setItem('mistakeCounterScore', String(failureCounter));
-      return window.location.assign('FIA-Wiki-Quiz/end');
+      return window.location.assign('end');
     }
 
     failuresCounterText = document.getElementById('score');
