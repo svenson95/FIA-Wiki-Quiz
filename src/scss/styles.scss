@@ -99,7 +99,7 @@ h3 {
     width: 120px;
     position: relative;
     margin: 0 auto;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 
     @include to-xs {
       margin-bottom: 2rem;
@@ -130,7 +130,7 @@ h3 {
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 0 1.5rem 3rem;
 }
 
 /* any child of the container */
@@ -218,7 +218,7 @@ h3 {
   text-align: center;
   font-size: 2.5rem;
   background-color: white;
-  padding: 2.2rem 0.5rem;
+  padding: 1.9rem 0.5rem;
   width: 120px;
   border-radius: 0 0 10px 10px;
   border: 0.1rem solid rgb(86, 165, 235, 0.25);

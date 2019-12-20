@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 
 let question: HTMLElement;
 let choices = [];
-let questionCounterText: HTMLElement;
-let failuresText: HTMLElement;
+let progressText: HTMLElement;
+let progressBarFull: HTMLElement;
 
+let failuresCounterText: HTMLElement;
 let failureCounter = 0;
+let questionCounterText: HTMLElement;
 let questionCounter = 0;
+
 let currentQuestion;
 let acceptingAnswers = false;
 let availableQuestions = [];
@@ -101,12 +104,17 @@ export class GameComponent implements OnInit {
       return window.location.assign('/end.html');
     }
 
-    failuresText = document.getElementById('score');
+    failuresCounterText = document.getElementById('score');
     questionCounterText = document.getElementById('questionCounter');
+    progressText = document.getElementById('progressText');
     question = document.getElementById('question');
 
     questionCounter++;
     questionCounterText.innerText = `${questionCounter} / ${MAX_QUESTIONS}`;
+
+    // Update progress bar value
+    progressBarFull = document.getElementById('progressBarFull');
+    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -125,7 +133,7 @@ export class GameComponent implements OnInit {
 
   incrementFailures = num => {
     failureCounter += num;
-    failuresText.innerText = String(failureCounter);
+    failuresCounterText.innerText = String(failureCounter);
   }
 
 }
