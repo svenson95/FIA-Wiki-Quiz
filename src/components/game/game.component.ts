@@ -77,6 +77,8 @@ export class GameComponent implements OnInit {
         setTimeout( () => {
           this.getNewQuestion();
           selectedChoice.parentElement.classList.remove(classToApply);
+          const titleElement = document.querySelector('menu');
+          window.scrollTo({left: 0 , top: 80, behavior: 'smooth'});
         }, 1500);
 
       });
@@ -89,6 +91,7 @@ export class GameComponent implements OnInit {
     failureCounter = 0;
     availableQuestions = [ ... questions];
     this.getNewQuestion();
+    window.scrollTo({left: 0 , top: 80, behavior: 'smooth'});
   };
 
   getNewQuestion = () => {
@@ -117,6 +120,7 @@ export class GameComponent implements OnInit {
     availableQuestions.splice(questionIndex, 1);
 
     acceptingAnswers = true;
+    document.documentElement.scrollTop = 20;
   };
 
   incrementFailures = num => {

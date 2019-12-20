@@ -28,10 +28,12 @@
   }
 
   .backbutton {
+    display: flex;
+    justify-content: space-around;
     font-size: 1.5rem;
-    padding: 0.4rem 0;
+    padding: 1rem 4rem;
     margin: 0 auto;
-    width: 15rem;
+    width: 28rem;
     text-align: center;
     border: 0.1rem solid #f5f5f5;
     text-decoration: none;
@@ -59,8 +61,12 @@ h1 > span {
 
 h2 {
   font-size: 4.2rem;
-  margin-bottom: 4rem;
   font-weight: 700;
+  text-align: center;
+
+  @include to-xs {
+    margin-bottom: 2rem;
+  }
 }
 
 h3 {
@@ -68,7 +74,7 @@ h3 {
   font-weight: 500;
 
   @include to-xs {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin: 0 10px;
   }
 }
@@ -86,17 +92,14 @@ h3 {
 
   @include from-xs {
     margin-top: 2rem;
-    padding: 0 0;
+    padding: 0 1.5rem;
   }
 
   a {
     width: 120px;
     position: relative;
     margin: 0 auto;
-
-    @include from-xs {
-      margin-left: 0px;
-    }
+    margin-bottom: 2.5rem;
 
     @include to-xs {
       margin-bottom: 2rem;
@@ -107,6 +110,7 @@ h3 {
     width: 260px;
 
     position: relative;
+    justify-content: space-between;
 
     @include to-xs {
       justify-content: space-evenly;
@@ -126,11 +130,7 @@ h3 {
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 3rem 0;
-
-  @include to-xs {
-    padding: 3rem 1.5rem;
-  }
+  padding: 3rem 1.5rem;
 }
 
 /* any child of the container */
@@ -146,6 +146,14 @@ h3 {
 .flex-center {
   justify-content: center;
   align-items: center;
+}
+
+.menu {
+  width: 400px;
+
+  @include to-xs {
+    width: 100%;
+  }
 }
 
 .justify-center {
@@ -200,7 +208,7 @@ h3 {
   font-size: 2rem;
   color: white;
   background-color: #56a5eb;
-  padding: 0.5rem;
+  padding: 0.7rem;
   width: 120px;
   border-radius: 10px 10px 0 0;
   border: 0.1rem solid rgb(86, 165, 235, 0.25);
@@ -208,9 +216,9 @@ h3 {
 
 .hud-main-text {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   background-color: white;
-  padding: 1.0rem 0.5rem;
+  padding: 2.2rem 0.5rem;
   width: 120px;
   border-radius: 0 0 10px 10px;
   border: 0.1rem solid rgb(86, 165, 235, 0.25);
