@@ -12,7 +12,14 @@
   margin: 0;
   padding: 0;
   color: #333;
+}
+
+.congratContainer {
   text-align: center;
+
+  .btn {
+    margin-bottom: 20px;
+  }
 }
 
 .header {
