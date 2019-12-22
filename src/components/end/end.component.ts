@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+import {quizTitles} from "../start/start.component";
 
 let congratulationText = [
   'Du hast den Quiz ohne Fehler abgeschlossen',
@@ -20,6 +22,8 @@ let congratulationEmoji = [
   '&#128565;',
 ];
 
+let quizUrl;
+
 @Component({
   selector: 'app-end',
   templateUrl: './end.component.html',
@@ -27,9 +31,27 @@ let congratulationEmoji = [
 })
 export class EndComponent implements OnInit {
 
-  constructor() { }
+  @Input() activeQuiz = quizUrl;
+  @Input() quizTitle;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+
+    quizUrl = String(this.router.url)
+      .replace("/","")
+      .replace("/game", "")
+      .replace("/end", "");
+
+    this.activeQuiz = quizUrl;
+
+    // Set Quiz title
+    if (this.activeQuiz == 'lf1') {
+      this.quizTitle = quizTitles[0];
+    } else if (this.activeQuiz == 'wiso') {
+      this.quizTitle = quizTitles[1];
+    }
+
     const mistakeCounter = document.getElementById('score');
     const mistakeCounterScore = localStorage.getItem('mistakeCounterScore');
 

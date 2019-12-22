@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import lf1_questions from "../../data/lf1-questions";
+import wiso_questions from "../../data/wiso-questions";
+import {Router} from "@angular/router";
+import {quizTitles} from "../start/start.component";
+
+let quizId = [];
+let quizUrl;
 
 let question: HTMLElement;
 let currentQuestion;
@@ -22,9 +28,32 @@ let progressBar: HTMLElement;
 
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  @Input() activeQuiz = quizUrl;
+  @Input() quizTitle;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+
+    quizUrl = String(this.router.url)
+        .replace("/","")
+        .replace("/game", "");
+
+    this.activeQuiz = quizUrl;
+
+    if (quizUrl == 'lf1') {
+      quizId = lf1_questions;
+    } else if (quizUrl == 'wiso') {
+      quizId = wiso_questions;
+    }
+
+    // Set Quiz title
+    if (this.activeQuiz == 'lf1') {
+      this.quizTitle = quizTitles[0];
+    } else if (this.activeQuiz == 'wiso') {
+      this.quizTitle = quizTitles[1];
+    }
+
     choices = Array.from(document.getElementsByClassName('choice-text'));
 
     this.startGame();
@@ -63,17 +92,17 @@ export class GameComponent implements OnInit {
   startGame = () => {
     questionCounter = 0;
     mistakeCounter = 0;
-    availableQuestions = [ ... lf1_questions];
+    availableQuestions = [ ... quizId];
     this.getNewQuestion();
     window.scrollTo({left: 0 , top: 125, behavior: 'smooth'});
   };
 
   getNewQuestion = () => {
 
-    if (availableQuestions.length === 0 || questionCounter >= lf1_questions.length) {
+    if (availableQuestions.length === 0 || questionCounter >= quizId.length) {
       // Got to the end page
       localStorage.setItem('mistakeCounterScore', String(mistakeCounter));
-      return window.location.assign('end');
+      return window.location.assign(`${quizUrl}/end`);
     }
 
     mistakeCounterElement = document.getElementById('score');
@@ -81,11 +110,11 @@ export class GameComponent implements OnInit {
     question = document.getElementById('question');
 
     questionCounter++;
-    questionCounterElement.innerText = `${questionCounter} / ${lf1_questions.length}`;
+    questionCounterElement.innerText = `${questionCounter} / ${quizId.length}`;
 
     // Update progress bar value
     progressBar = document.getElementById('progress');
-    progressBar.style.width = `${((questionCounter - 1) / lf1_questions.length) * 100}%`;
+    progressBar.style.width = `${((questionCounter - 1) / quizId.length) * 100}%`;
 
     // Random question order
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);

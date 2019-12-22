@@ -8,22 +8,9 @@
   </head>
   <body>
     <div class="container">
-<!--      <div id="end" class="flex-center flex-column">-->
-<!--        <div id="hud">-->
-<!--          <div id="hud-item">-->
-<!--            <p class="hud-prefix">-->
-<!--              Fehler-->
-<!--            </p>-->
-<!--            <h1 class="hud-main-text" id="score">-->
-<!--              <p id="resultFailureCounter">0</p>-->
-<!--            </h1>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
       <div class="container__header">
         <div class="menu flex-column">
-          <a class="btn" routerLink="/game" routerLinkActive="active">Neustarten</a>
-          <h2 id="quizTitle" title>Lernfeld 1 Quiz</h2>
+          <h2 id="quizTitle" title>{{ quizTitle }} Quiz</h2>
         </div>
         <div id="hud">
           <div id="hud-item">
@@ -49,6 +36,7 @@
           Du hast den Quiz ohne Fehler abgeschlossen
         </h3>
         <p class="congratEmoji text-center" id="congratEmoji">&#11088;</p>
+        <a class="btn" routerLink="/{{ activeQuiz }}" routerLinkActive="active">Neustarten</a>
       </div>
     </div>
   </body>
