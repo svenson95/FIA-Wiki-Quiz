@@ -16,10 +16,7 @@
 
 .congratContainer {
   text-align: center;
-
-  .btn {
-    margin-bottom: 20px;
-  }
+  height: 450px;
 }
 
 .header {
@@ -81,10 +78,6 @@ h2 {
   font-size: 4.2rem;
   font-weight: 700;
   text-align: center;
-
-  @include to-xs {
-    margin-bottom: 2rem;
-  }
 }
 
 h3 {
@@ -117,7 +110,7 @@ h3 {
     width: 120px;
     position: relative;
     margin: 0 auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     @include to-xs {
       margin-bottom: 2rem;
@@ -125,14 +118,15 @@ h3 {
   }
 
   #hud {
-    width: 260px;
+    width: 50%;
 
     position: relative;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     @include to-xs {
       justify-content: space-evenly;
       width: 100%;
+      margin-top: 2rem;
     }
   }
 
@@ -167,7 +161,7 @@ h3 {
 }
 
 .menu {
-  width: 400px;
+  width: 50%;
 
   @include to-xs {
     width: 100%;

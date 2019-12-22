@@ -80,7 +80,7 @@ export class GameComponent implements OnInit {
 
           this.getNewQuestion();
           selectedElement.parentElement.classList.remove(correctClass);
-          window.scrollTo({left: 0 , top: 125, behavior: 'smooth'});
+          window.scrollTo({left: 0 , top: 125, behavior: 'auto'});
 
         }, 1000);
 
@@ -94,7 +94,7 @@ export class GameComponent implements OnInit {
     mistakeCounter = 0;
     availableQuestions = [ ... quizId];
     this.getNewQuestion();
-    window.scrollTo({left: 0 , top: 125, behavior: 'smooth'});
+    window.scrollTo({left: 0 , top: 125, behavior: 'auto'});
   };
 
   getNewQuestion = () => {
