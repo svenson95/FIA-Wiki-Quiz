@@ -16,7 +16,7 @@
 
 .congratContainer {
   text-align: center;
-  height: 450px;
+  height: 480px;
 }
 
 .header {
@@ -107,7 +107,6 @@ h3 {
   }
 
   a {
-    width: 120px;
     position: relative;
     margin: 0 auto;
     margin-bottom: 1rem;
@@ -142,7 +141,8 @@ h3 {
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 0 1.5rem 3rem;
+  padding: 0 1.5rem 10rem;
+
 }
 
 /* any child of the container */

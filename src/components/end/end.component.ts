@@ -63,7 +63,7 @@ export class EndComponent implements OnInit {
     const congratEmoji = document.getElementById('congratEmoji');
     congratEmoji.innerHTML = congratulationEmoji[mistakeCounterScore];
 
-    window.scrollTo({left: 0 , top: 70, behavior: 'auto'});
+    window.scrollTo({left: 0 , top: 80, behavior: 'auto'});
   }
 
 }
