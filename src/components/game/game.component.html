@@ -1,11 +1,15 @@
+<div class="btn__container">
+  <a class="btn" routerLink="/{{ activeQuiz }}" routerLinkActive="active">Neustarten</a>
+</div>
 <div class="container__header">
   <div class="menu flex-column">
-    <a class="btn" routerLink="/{{ activeQuiz }}" routerLinkActive="active">Neustarten</a>
-    <h2 id="quizTitle" title>{{ quizTitle }} Quiz</h2>
-    <div id="progressBar">
-      <div class="progressFull">
-        <div id="progress">
-          <!-- <p id="progressText"></p> -->
+    <div class="quizTitle__container">
+      <h2 id="quizTitle" title>{{ quizTitle }} Quiz</h2>
+      <div id="progressBar">
+        <div class="progressFull">
+          <div id="progress">
+            <!-- <p id="progressText"></p> -->
+          </div>
         </div>
       </div>
     </div>
@@ -15,7 +19,9 @@
       <p class="hud-prefix">
         Frage
       </p>
-      <h1 class="hud-main-text" id="questionCounter"></h1>
+      <h1 class="hud-main-text" id="questionCounter">
+        0 / 1
+      </h1>
     </div>
     <div id="hud-item">
       <p class="hud-prefix">
@@ -27,13 +33,6 @@
     </div>
   </div>
 </div>
-<!--<div id="progressBar">-->
-<!--  <div class="progressFull">-->
-<!--    <div id="progress">-->
-<!--      &lt;!&ndash; <p id="progressText"></p> &ndash;&gt;-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
 <div class="container__content flex-column">
   <div id="game" class="justify-center flex-column">
     <h3 id="question">What is the answer to this questions?</h3>

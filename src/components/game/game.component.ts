@@ -107,6 +107,8 @@ export class GameComponent implements OnInit {
     if (availableQuestions.length === 0 || questionCounter >= quizId.length) {
       // Got to the end page
       localStorage.setItem('mistakeCounterScore', String(mistakeCounter));
+      localStorage.setItem('questionCounterScore', String(questionCounterElement.innerText));
+      console.log('Test',String(questionCounterElement.innerText));
       return window.location.assign(`${quizUrl}/end`);
     }
 

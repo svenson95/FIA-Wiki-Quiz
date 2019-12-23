@@ -77,7 +77,6 @@ h1 > span {
 h2 {
   font-size: 4.2rem;
   font-weight: 700;
-  line-height: 45px;
   text-align: center;
 }
 
@@ -110,7 +109,7 @@ h3 {
   a {
     position: relative;
     margin: 0 auto;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
     @include to-xs {
       margin-bottom: 2rem;
@@ -163,6 +162,7 @@ h3 {
 
 .menu {
   width: 50%;
+  align-items: center;
 
   @include to-xs {
     width: 100%;
@@ -182,6 +182,13 @@ h3 {
 }
 
 /* BUTTONS */
+
+.btn__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
 .btn {
   font-size: 1.8rem;
@@ -243,4 +250,29 @@ h3 {
 
 #hud-item {
   vertical-align: middle;
+}
+
+/* PROGRESS BAR */
+.quizTitle__container {
+  width: fit-content;
+
+  h2 {
+    width: fit-content;
+    line-height: 40px;
+  }
+}
+
+#progressBar {
+
+  #progress {
+    height: .5rem;
+    background-color: #333;
+    border-radius: 10px;
+    width: 0%;
+  }
+
+  .progressFull {
+    border-radius: 10px;
+    background-color: #56a5eb;
+  }
 }

@@ -1,43 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-    <title>Congrats!</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="container__header">
-        <div class="menu flex-column">
-          <h2 id="quizTitle" title>{{ quizTitle }} Quiz</h2>
-          <div id="progressBar">
-            <div class="progressFull">
-              <div id="progress">
-                <!-- <p id="progressText"></p> -->
-              </div>
+<div class="container">
+  <div class="container__header">
+    <div class="menu flex-column">
+      <div class="quizTitle__container">
+        <h2 id="quizTitle" title>{{ quizTitle }} Quiz</h2>
+        <div id="progressBar">
+          <div class="progressFull">
+            <div id="progress">
+              <!-- <p id="progressText"></p> -->
             </div>
           </div>
         </div>
-        <div id="hud">
-          <div id="hud-item">
-            <p class="hud-prefix">
-              Fehler
-            </p>
-            <h1 class="hud-main-text" id="score">
-              0
-            </h1>
-          </div>
-        </div>
-      </div>
-      <div class="congratContainer">
-        <h2 class="done">Fertig</h2>
-        <h3 class="congratText text-center" id="congratText">
-          Du hast den Quiz ohne Fehler abgeschlossen
-        </h3>
-        <p class="congratEmoji text-center" id="congratEmoji">&#11088;</p>
-        <a class="btn" routerLink="/{{ activeQuiz }}" routerLinkActive="active">Neustarten</a>
       </div>
     </div>
-  </body>
-</html>
+    <div id="hud">
+      <div id="hud-item">
+        <p class="hud-prefix">
+          Frage
+        </p>
+        <h1 class="hud-main-text" id="questionCounter"></h1>
+      </div>
+      <div id="hud-item">
+        <p class="hud-prefix">
+          Fehler
+        </p>
+        <h1 class="hud-main-text" id="score">
+          0
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="congratContainer">
+    <h2 class="done">Fertig</h2>
+    <h3 class="congratText text-center" id="congratText">
+      Du hast den Quiz ohne Fehler abgeschlossen
+    </h3>
+    <p class="congratEmoji text-center" id="congratEmoji">&#11088;</p>
+    <a class="btn" routerLink="/{{ activeQuiz }}" routerLinkActive="active">Neustarten</a>
+  </div>
+</div>

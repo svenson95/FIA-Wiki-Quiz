@@ -74,20 +74,3 @@
     background-color: #56afff;
   }
 }
-
-#progressBar {
-  max-width: 80rem;
-  border-radius: 10px;
-
-  #progress {
-    height: .3rem;
-    background-color: #333;
-    width: 0%;
-  }
-
-  .progressFull {
-    margin: 0 3rem;
-    border-radius: 10px;
-    background-color: #56a5eb;
-  }
-}

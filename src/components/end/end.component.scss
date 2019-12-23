@@ -16,6 +16,12 @@
 
 }
 
+#progressBar {
+  #progress {
+    width: 100%;
+  }
+}
+
 .done {
   margin: 2rem 0;
 }
@@ -37,7 +43,6 @@
 
 #hud {
   display: flex;
-  justify-content: center;
 
   @include to-xs {
     margin-top: 0;

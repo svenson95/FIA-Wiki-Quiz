@@ -52,9 +52,12 @@ export class EndComponent implements OnInit {
       this.quizTitle = quizTitles[1];
     }
 
+    const questionCounter = document.getElementById('questionCounter');
+    const questionCounterScore = localStorage.getItem('questionCounterScore');
+    questionCounter.innerText = questionCounterScore
+
     const mistakeCounter = document.getElementById('score');
     const mistakeCounterScore = localStorage.getItem('mistakeCounterScore');
-
     mistakeCounter.innerText = mistakeCounterScore;
 
     const congratLabel = document.getElementById('congratText');
