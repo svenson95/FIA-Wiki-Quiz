@@ -16,27 +16,6 @@
 
 }
 
-#progressBar {
-  max-width: 80rem;
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-
-  #progress {
-    height: 1.4rem;
-    background-color: #56a5eb;
-    border-radius: 10px;
-    width: 100%;
-  }
-
-  .progressFull {
-    margin: 0 2rem;
-    border: 0.1rem solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: white;
-  }
-}
-
 .done {
   margin: 2rem 0;
 }
@@ -82,7 +61,7 @@
 .hud-main-text {
   text-align: center;
   background-color: white;
-  padding: 1.9rem 0.5rem;
+  padding: 1rem 0.5rem;
   width: 120px;
   border-radius: 0 0 10px 10px;
   border-left: 0.1rem solid rgba(0, 0, 0, 0.1);
