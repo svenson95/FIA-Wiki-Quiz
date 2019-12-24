@@ -34,5 +34,10 @@ export function inFrameChanger() {
       congratContainerEl.style.height = '360px';
     }
 
+    let containerHeader = document.getElementById('container__header');
+    if (containerHeader != null) {
+      containerHeader.style.marginTop = '0';
+    }
+
   }
 }
