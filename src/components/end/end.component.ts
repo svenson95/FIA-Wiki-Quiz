@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {quizTitles} from "../start/start.component";
+import {inFrameChanger} from "../../service/inFrameChanger";
 
 let congratulationText = [
   'Du hast den Quiz ohne Fehler abgeschlossen',
@@ -38,6 +39,8 @@ export class EndComponent implements OnInit {
 
   ngOnInit() {
 
+    inFrameChanger();
+
     quizUrl = String(this.router.url)
       .replace("/","")
       .replace("/game", "")
@@ -66,7 +69,7 @@ export class EndComponent implements OnInit {
     const congratEmoji = document.getElementById('congratEmoji');
     congratEmoji.innerHTML = congratulationEmoji[mistakeCounterScore];
 
-    window.scrollTo({left: 0 , top: 80, behavior: 'auto'});
+    window.scrollTo({left: 0 , top: 100, behavior: 'auto'});
   }
 
 }

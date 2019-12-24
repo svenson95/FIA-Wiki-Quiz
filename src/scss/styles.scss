@@ -99,10 +99,10 @@ h3 {
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 4rem 1.5rem 2rem;
 
   @include from-xs {
-     margin-top: 2rem;
+     margin-top: 4rem;
      padding: 0 1.5rem;
   }
 
@@ -166,6 +166,7 @@ h3 {
 
   @include to-xs {
     width: 100%;
+    margin-bottom: 2rem;
   }
 }
 
@@ -196,7 +197,6 @@ h3 {
   width: 15rem;
   text-align: center;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
   text-decoration: none;
   color: white;
   background-color: #56a5eb;

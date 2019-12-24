@@ -3,6 +3,7 @@ import lf1_questions from "../../data/lf1-questions";
 import wiso_questions from "../../data/wiso-questions";
 import {Router} from "@angular/router";
 import {quizTitles} from "../start/start.component";
+import {inFrameChanger} from "../../service/inFrameChanger";
 
 let quizId = [];
 let quizUrl;
@@ -34,6 +35,8 @@ export class GameComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+
+    inFrameChanger();
 
     quizUrl = String(this.router.url)
         .replace("/","")
@@ -85,7 +88,7 @@ export class GameComponent implements OnInit {
           this.getNewQuestion();
           selectedElement.parentElement.classList.remove(selectedClass);
           correctElement.parentElement.classList.remove(correctClass);
-          window.scrollTo({left: 0 , top: 125, behavior: 'auto'});
+          window.scrollTo({left: 0 , top: 140, behavior: 'auto'});
 
         }, selectedClass == 'incorrect' ? 3000 : 1000 );
 
@@ -119,9 +122,11 @@ export class GameComponent implements OnInit {
     questionCounter++;
     questionCounterElement.innerText = `${questionCounter} / ${quizId.length}`;
 
-    // Update progress bar value
-    progressBar = document.getElementById('progress');
-    progressBar.style.width = `${((questionCounter - 1) / quizId.length) * 100}%`;
+    // Update progress bar value, if not in iFrame because then title + progressBar is hidden
+    if (window == window.top) {
+      progressBar = document.getElementById('progress');
+      progressBar.style.width = `${((questionCounter - 1) / quizId.length) * 100}%`;
+    }
 
     // Random question order
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
