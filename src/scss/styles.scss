@@ -26,7 +26,7 @@
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem 0;
 
   @include to-xs {
     padding: 2rem;
@@ -90,6 +90,16 @@ h3 {
   }
 }
 
+h4 {
+  font-size: 2rem;
+  font-weight: 500;
+
+  @include to-xs {
+    font-size: 1.8rem;
+    margin: 0 10px;
+  }
+}
+
 /* UTILITIES */
 
 .container__header {
@@ -142,7 +152,7 @@ h3 {
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 1.5rem;
-
+  margin-bottom: 100px;
 }
 
 /* any child of the container */
@@ -234,6 +244,12 @@ h3 {
   border-left: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-right: 0.1rem solid rgba(0, 0, 0, 0.1);
+
+  @include to-xs {
+    font-size: 1.8rem;
+    padding: 0.4rem;
+    width: 100px;
+  }
 }
 
 .hud-main-text {
@@ -246,6 +262,12 @@ h3 {
   border-left: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-right: 0.1rem solid rgba(0, 0, 0, 0.1);
+
+  @include to-xs {
+    font-size: 2rem;
+    padding: 0.4rem;
+    width: 100px;
+  }
 }
 
 #hud-item {

@@ -16,17 +16,20 @@ export function inFrameChanger() {
     let hudElement = document.getElementById('hud');
     if (hudElement != null) {
       hudElement.style.width = '100%';
+      hudElement.style.marginTop = '0';
     }
 
     let containerElement = document.getElementById('container__content');
     if (containerElement != null) {
       containerElement.style.padding = '0';
+      containerElement.style.marginBottom = '0';
     }
 
     let restartBtn = document.getElementById('btn__container');
     if (restartBtn != null) {
       restartBtn.parentNode.removeChild(restartBtn);
       containerElement.appendChild(restartBtn);
+      restartBtn.style.marginTop = '20px';
     }
 
     let congratContainerEl = document.getElementById('congratContainer');
@@ -37,6 +40,7 @@ export function inFrameChanger() {
     let containerHeader = document.getElementById('container__header');
     if (containerHeader != null) {
       containerHeader.style.marginTop = '0rem';
+      containerHeader.style.padding = '0 1.5rem 0';
     }
 
   }
