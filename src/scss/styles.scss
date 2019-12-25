@@ -209,15 +209,13 @@ h4 {
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: white;
-  background-color: #56a5eb;
+  background-color: #8819e5;
   border-radius: 10px;
 }
 
 .btn:hover {
   cursor: pointer;
-  background-color: #56afff;
-  //transform: translateY(-0.1rem);
-  //transition: transform 150ms;
+  background-color: #e01798;
 }
 
 .btn[disabled]:hover {
@@ -237,7 +235,7 @@ h4 {
   text-align: center;
   font-size: 2rem;
   color: white;
-  background-color: #56a5eb;
+  background-color: #8819e5;
   padding: 0.7rem;
   width: 120px;
   border-radius: 10px 10px 0 0;
@@ -272,6 +270,12 @@ h4 {
 
 #hud-item {
   vertical-align: middle;
+}
+
+#hud-item:hover {
+  .hud-prefix {
+    background-color: #e01798;
+  }
 }
 
 /* PROGRESS BAR */

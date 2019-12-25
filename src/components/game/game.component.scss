@@ -18,7 +18,7 @@
   transition: transform 150ms;
 
   .choice-prefix {
-    background-color: #56afff;
+    background-color: #e01798;
   }
 }
 
@@ -29,14 +29,14 @@
     background-color: white;
 
     .choice-prefix {
-      background-color: #56a5eb;
+      background-color: #8819e5;
     }
   }
 }
 
 .choice-prefix {
   padding: 1.5rem 2.5rem;
-  background-color: #56a5eb;
+  background-color: #8819e5;
   border-radius: 10px 0 0 10px;
   color: white;
 
@@ -69,11 +69,5 @@
 
   @include to-xs {
     margin: 10px 10px;
-  }
-}
-
-#hud-item:hover {
-  .hud-prefix {
-    background-color: #56afff;
   }
 }
