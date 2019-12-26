@@ -60,6 +60,7 @@
   .backbutton:hover {
     cursor: pointer;
     background-color: #f5f5f5;
+    transition: 300ms;
   }
 
 }
@@ -216,6 +217,7 @@ h4 {
 .btn:hover {
   cursor: pointer;
   background-color: #e01798;
+  transition: 300ms;
 }
 
 .btn[disabled]:hover {
@@ -275,6 +277,7 @@ h4 {
 #hud-item:hover {
   .hud-prefix {
     background-color: #e01798;
+    transition: 300ms;
   }
 }
 

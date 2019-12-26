@@ -15,10 +15,11 @@
   cursor: pointer;
   background-color: #f5f5f5;
   transform: translateX(-0.1rem);
-  transition: transform 150ms;
+  transition: 300ms;
 
   .choice-prefix {
     background-color: #e01798;
+    transition: 300ms;
   }
 }
 
@@ -57,11 +58,13 @@
 .correct.choice-container:hover,
 .correct {
   background-color: #c8f2d2;
+  transition: 150ms;
 }
 
 .incorrect.choice-container:hover,
 .incorrect {
   background-color: #f6cbd0;
+  transition: 150ms;
 }
 
 #question {
