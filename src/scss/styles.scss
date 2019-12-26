@@ -33,12 +33,21 @@
   }
 
   img {
-    width: 30px;
-    height: 22px;
+    height: 30px;
   }
 
   .logo-title {
     font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    font-size: 24px;
+    background: -webkit-linear-gradient(-86deg,#f819a9 5%,#d165ec 53%,#8819e5 91%);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 5px transparent;
+    color: white;
+    width: 160px;
   }
 
 
@@ -48,7 +57,7 @@
     font-size: 1.5rem;
     padding: 0.5rem 4rem;
     margin: 0 auto;
-    width: 24rem;
+    width: 27.5rem;
     text-align: center;
     border: 0.1rem solid rgba(0, 0, 0, 0.1);
     text-decoration: none;
