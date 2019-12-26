@@ -90,7 +90,7 @@ export class GameComponent implements OnInit {
           correctElement.parentElement.classList.remove(correctClass);
           window.scrollTo({left: 0 , top: 140, behavior: 'auto'});
 
-        }, selectedClass == 'incorrect' ? 3000 : 1000 );
+        }, selectedClass == 'incorrect' ? 2500 : 1000 );
 
       });
     });
