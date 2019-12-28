@@ -80,14 +80,16 @@ export class GameComponent implements OnInit {
         if (selectedClass === 'incorrect') {
           this.incrementMistakes(1);
           correctElement.parentElement.classList.add(correctClass);
-
         }
 
         setTimeout( () => {
 
-          this.getNewQuestion();
+          if (selectedClass === 'incorrect') {
+            correctElement.parentElement.classList.remove(correctClass);
+          }
           selectedElement.parentElement.classList.remove(selectedClass);
-          correctElement.parentElement.classList.remove(correctClass);
+
+          this.getNewQuestion();
           window.scrollTo({left: 0 , top: 140, behavior: 'auto'});
 
         }, selectedClass == 'incorrect' ? 2500 : 1000 );

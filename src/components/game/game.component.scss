@@ -18,7 +18,7 @@
   transition: 300ms;
 
   .choice-prefix {
-    background-color: #e01798;
+    background-color: #c1f819;
     transition: 300ms;
   }
 }
@@ -30,16 +30,15 @@
     background-color: white;
 
     .choice-prefix {
-      background-color: #8819e5;
+      background-color: #ffea00;
     }
   }
 }
 
 .choice-prefix {
   padding: 1.5rem 2.5rem;
-  background-color: #8819e5;
+  background-color: #ffea00;
   border-radius: 10px 0 0 10px;
-  color: white;
 }
 
 .choice-text {

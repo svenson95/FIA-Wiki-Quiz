@@ -2,7 +2,7 @@
 @import "./src/scss/mixins";
 
 :root {
-  background-color: #fbfaf9;
+  background-color: #f7f7f7;
   font-size: 62.5%;
 }
 
@@ -37,19 +37,25 @@
   }
 
   .logo-title {
-    font-size: 1.2em;
+    font-size: 24px;
+    color: black;
+
+    width: 160px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
-    font-size: 24px;
-    background: -webkit-linear-gradient(-86deg,#f819a9 5%,#d165ec 53%,#8819e5 91%);
+    background: -webkit-linear-gradient(-86deg,#c1f819 4%,#ffea00 96%);
     -webkit-background-clip: text;
-    -webkit-text-stroke: 5px transparent;
-    color: white;
-    width: 160px;
+    -webkit-text-stroke: 3.5px transparent;
   }
 
+  #arrow {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 
   .backbutton {
     display: flex;
@@ -67,9 +73,10 @@
   }
 
   .backbutton:hover {
-    cursor: pointer;
-    background-color: #f5f5f5;
-    transition: 300ms;
+    #arrow {
+      transform: translateX(-3px);
+      transition: 300ms;
+    }
   }
 
 }
@@ -218,14 +225,13 @@ h4 {
   text-align: center;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  color: white;
-  background-color: #8819e5;
+  background-color: #ffea00;
   border-radius: 10px;
 }
 
 .btn:hover {
   cursor: pointer;
-  background-color: #e01798;
+  background-color: #c1f819;
   transition: 300ms;
 }
 
@@ -245,8 +251,7 @@ h4 {
 .hud-prefix {
   text-align: center;
   font-size: 2rem;
-  color: white;
-  background-color: #8819e5;
+  background-color: #ffea00;
   padding: 0.7rem;
   width: 120px;
   border-radius: 10px 10px 0 0;
@@ -285,7 +290,7 @@ h4 {
 
 #hud-item:hover {
   .hud-prefix {
-    background-color: #e01798;
+    background-color: #c1f819;
     transition: 300ms;
   }
 }
@@ -311,6 +316,6 @@ h4 {
 
   .progressFull {
     border-radius: 10px;
-    background-color: #8819e5;
+    background: #ffea00;
   }
 }
