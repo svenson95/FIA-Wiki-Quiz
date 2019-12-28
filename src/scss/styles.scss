@@ -45,7 +45,7 @@
     flex-direction: column;
     justify-content: space-around;
 
-    background: -webkit-linear-gradient(-86deg,#c1f819 4%,#ffea00 96%);
+    background: -webkit-linear-gradient(-86deg,#c1f819 4%,#ffbc00 96%);
     -webkit-background-clip: text;
     -webkit-text-stroke: 3.5px transparent;
   }
@@ -225,7 +225,7 @@ h4 {
   text-align: center;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  background-color: #ffea00;
+  background-color: #ffbc00;
   border-radius: 10px;
 }
 
@@ -251,7 +251,7 @@ h4 {
 .hud-prefix {
   text-align: center;
   font-size: 2rem;
-  background-color: #ffea00;
+  background-color: #ffbc00;
   padding: 0.7rem;
   width: 120px;
   border-radius: 10px 10px 0 0;
@@ -316,6 +316,6 @@ h4 {
 
   .progressFull {
     border-radius: 10px;
-    background: #ffea00;
+    background: #ffbc00;
   }
 }
