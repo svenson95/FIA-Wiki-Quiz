@@ -31,6 +31,8 @@ export class GameComponent implements OnInit {
 
   @Input() activeQuiz = quizUrl;
   @Input() quizTitle;
+  @Input() htmlChoices;
+  @Input() quizUrl = quizUrl;
 
   constructor(private router: Router) { }
 
@@ -58,6 +60,7 @@ export class GameComponent implements OnInit {
     }
 
     choices = Array.from(document.getElementsByClassName('choice-text'));
+    this.htmlChoices = choices;
 
     this.startGame();
 

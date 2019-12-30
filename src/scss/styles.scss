@@ -33,24 +33,31 @@
   }
 
   img {
-    height: 30px;
+    height: 40px;
+    align-self: center;
+    padding: .1em;
+    margin-right: 5px;
+    border-radius: 50px;
+    background: linear-gradient(-180deg, #c1f819 4%, #ffbc00 96%);
+    box-shadow: 0 1px 2px #ccc;
   }
 
   .logo-title {
     font-size: 24px;
     color: black;
 
-    width: 160px;
+    width: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
-    background: -webkit-linear-gradient(-86deg,#c1f819 4%,#ffbc00 96%);
+    background: -webkit-linear-gradient(-90deg, #c1f819 4%, #ffbc00 96%);
     -webkit-background-clip: text;
     -webkit-text-stroke: 3.5px transparent;
   }
 
   #arrow {
+    margin-left: 15px;
     font-size: 24px;
     display: flex;
     flex-direction: column;
@@ -63,7 +70,7 @@
     font-size: 1.5rem;
     padding: 0.5rem 4rem;
     margin: 0 auto;
-    width: 27.5rem;
+    width: 29rem;
     text-align: center;
     border: 0.1rem solid rgba(0, 0, 0, 0.1);
     text-decoration: none;
@@ -74,7 +81,7 @@
 
   .backbutton:hover {
     #arrow {
-      transform: translateX(-3px);
+      transform: translateX(-5px);
       transition: 300ms;
     }
   }
