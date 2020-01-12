@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
-export const quizTitles = ['Lernfeld 1', 'WiSo'];
+export const quizTitles = ['Lernfeld 1', 'Berufsbildung und Arbeitswelt'];
 
 @Component({
   selector: 'app-start',

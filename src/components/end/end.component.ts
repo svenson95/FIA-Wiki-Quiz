@@ -10,7 +10,7 @@ let congratulationText = [
   'Du hattest drei Fehler, probiere es nochmal',
   'Du hattest vier Fehler, probiere es nochmal',
   'Du hattest fünf Fehler, probiere es nochmal',
-  'Du hattest sechs Fehler, probiere es nochmal',
+  'Du hattest mehr als 5 Fehler, probiere es nochmal',
 ];
 
 let congratulationEmoji = [
@@ -32,7 +32,7 @@ let quizUrl;
 })
 export class EndComponent implements OnInit {
 
-  @Input() activeQuiz = quizUrl;
+  @Input() quiz_url = quizUrl;
   @Input() quizTitle;
 
   constructor(private router: Router) { }
@@ -46,22 +46,27 @@ export class EndComponent implements OnInit {
       .replace("/game", "")
       .replace("/end", "");
 
-    this.activeQuiz = quizUrl;
+    this.quiz_url = quizUrl;
 
     // Set Quiz title
-    if (this.activeQuiz == 'lf1') {
+    if (this.quiz_url == 'lf1') {
       this.quizTitle = quizTitles[0];
-    } else if (this.activeQuiz == 'wiso') {
+    } else if (this.quiz_url == 'wiso') {
       this.quizTitle = quizTitles[1];
     }
 
     const questionCounter = document.getElementById('questionCounter');
     const questionCounterScore = localStorage.getItem('questionCounterScore');
-    questionCounter.innerText = questionCounterScore
+    questionCounter.innerText = questionCounterScore;
 
     const mistakeCounter = document.getElementById('score');
-    const mistakeCounterScore = localStorage.getItem('mistakeCounterScore');
+    let mistakeCounterScore = localStorage.getItem('mistakeCounterScore');
     mistakeCounter.innerText = mistakeCounterScore;
+
+    // Set mistake counter to the highest related by the amount of different congratulationTexts to show
+    if (Number(mistakeCounterScore) > 5) {
+      mistakeCounterScore = "6"
+    }
 
     const congratLabel = document.getElementById('congratText');
     congratLabel.innerText = congratulationText[mistakeCounterScore];

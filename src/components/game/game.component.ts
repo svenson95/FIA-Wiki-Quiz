@@ -74,21 +74,29 @@ export class GameComponent implements OnInit {
         const selectedElement = element.target;
         const selectedAnswer = selectedElement.dataset['number'];
         const correctElement = choices[currentQuestion.answer - 1];
+        const otherChoice = choices.findIndex(answer => answer != choices[currentQuestion.answer - 1]);
+        const otherChoiceElement = choices[otherChoice];
 
         const resultClass = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
         const correctClass = 'correct';
+        const lockedClass = 'locked';
 
         selectedElement.parentElement.classList.add(resultClass);
 
         if (resultClass === 'incorrect') {
           this.incrementMistakes(1);
           correctElement.parentElement.classList.add(correctClass);
+        } else if (resultClass === 'correct') {
+          otherChoiceElement.parentElement.classList.add(lockedClass);
         }
+
 
         setTimeout( () => {
 
           if (resultClass === 'incorrect') {
             correctElement.parentElement.classList.remove(correctClass);
+          } else if (resultClass === 'correct') {
+            otherChoiceElement.parentElement.classList.remove(lockedClass);
           }
           selectedElement.parentElement.classList.remove(resultClass);
 
