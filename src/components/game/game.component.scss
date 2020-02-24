@@ -10,8 +10,10 @@
   background-color: white;
 }
 
-.choice-container:hover,
-.choice-container:active {
+.choice-container:hover:not(.locked),
+.choice-container:active,
+.correct,
+.incorrect {
   cursor: pointer;
   background-color: white;
   transform: translateX(-0.15rem);
@@ -50,23 +52,14 @@
   }
 }
 
-.locked.choice-container:hover,
-.locked {
-  transform: translateX(0.15rem);
-}
-
 .correct.choice-container:hover,
 .correct {
   background-color: #c8f2d2;
-  transform: translateX(0.15rem);
-  //transition: 150ms;
 }
 
 .incorrect.choice-container:hover,
 .incorrect {
   background-color: #f6cbd0;
-  transform: translateX(0.15rem);
-  //transition: 150ms;
 }
 
 #question {
