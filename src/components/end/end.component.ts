@@ -4,13 +4,13 @@ import {quizTitles} from "../start/start.component";
 import {inFrameChanger} from "../../service/inFrameChanger";
 
 let congratulationText = [
-  'Du hast den Quiz ohne Fehler abgeschlossen',
-  'Du hattest einen Fehler, schon mal nicht schlecht',
-  'Du hattest zwei Fehler, probiere es nochmal',
-  'Du hattest drei Fehler, probiere es nochmal',
-  'Du hattest vier Fehler, probiere es nochmal',
-  'Du hattest fünf Fehler, probiere es nochmal',
-  'Du hattest mehr als 5 Fehler, probiere es nochmal',
+  'Du hast das Quiz ohne Fehler abgeschlossen',
+  'Du hattest einen Fehler',
+  'Du hattest zwei Fehler',
+  'Du hattest drei Fehler',
+  'Du hattest vier Fehler',
+  'Du hattest fünf Fehler',
+  'Du hattest mehr als 5 Fehler',
 ];
 
 let congratulationEmoji = [
