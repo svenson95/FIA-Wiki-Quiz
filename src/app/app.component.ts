@@ -9,15 +9,7 @@ import { inFrameChanger } from "../service/inFrameChanger";
 export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
-
     inFrameChanger();
-
-    // Hide Some Elements if app is in iFrame
-    // if (window != window.top) {
-    //   let header = document.getElementById('header');
-    //   header.parentNode.removeChild(header);
-    // }
-
   }
 
 }

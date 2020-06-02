@@ -1,9 +1,7 @@
 @import "./src/scss/mixins";
 
-#progressBar {
-  #progress {
-    width: 100%;
-  }
+.progressFull {
+  background: #F4AC32 !important;
 }
 
 .done {
@@ -38,7 +36,7 @@
   text-align: center;
   background-color: white;
   padding: 1rem 0.5rem;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 5px 5px;
   border-left: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-right: 0.1rem solid rgba(0, 0, 0, 0.1);

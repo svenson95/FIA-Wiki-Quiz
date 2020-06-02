@@ -2,7 +2,7 @@
 @import "./src/scss/mixins";
 
 :root {
-  background-color: #f7f7f7;
+  background: #2C2E31;
   font-size: 62.5%;
 }
 
@@ -11,7 +11,7 @@
   font-family: Avenir, sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: white;
 }
 
 .congratContainer {
@@ -50,10 +50,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-    background: -webkit-linear-gradient(-90deg, #FFD131 4%, #F4AC32 96%);
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 4px transparent;
   }
 
   #arrow {
@@ -73,21 +69,18 @@
     width: 29rem;
     text-align: center;
     text-decoration: none;
-    color: #333;
+    .logo-title {
+      color: white;
+    }
   }
 
   .backbutton:hover {
     .header, img {
       background: #FFD131;
     }
-    .logo-title {
-      background: -webkit-linear-gradient(-90deg, #FFD131 4%, #FFD131 96%);
-      -webkit-background-clip: text;
-      -webkit-text-stroke: 5px transparent;
-    }
     #arrow {
-      //transform: translateX(-5px);
-      //transition: 300ms;
+      transform: translateX(-5px);
+      transition: 300ms;
     }
   }
 
@@ -238,7 +231,8 @@ h4 {
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   text-decoration: none;
   background-color: #F4AC32;
-  border-radius: 10px;
+  border-radius: 5px;
+  color: black;
 }
 
 
@@ -264,10 +258,11 @@ h4 {
 .hud-prefix {
   text-align: center;
   font-size: 2rem;
+  color: black;
   background-color: #F4AC32;
   padding: 0.7rem;
   width: 120px;
-  border-radius: 10px 10px 0 0;
+  border-radius: 5px 5px 0 0;
   border-left: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-right: 0.1rem solid rgba(0, 0, 0, 0.1);
@@ -282,10 +277,11 @@ h4 {
 .hud-main-text {
   text-align: center;
   font-size: 2.5rem;
+  color: black;
   background-color: white;
   padding: 1rem 0.5rem;
   width: 120px;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 5px 5px;
   border-left: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-right: 0.1rem solid rgba(0, 0, 0, 0.1);
@@ -322,13 +318,13 @@ h4 {
 
   #progress {
     height: .5rem;
-    background-color: #333;
-    border-radius: 10px;
-    width: 0%;
+    background-color: #F4AC32;
+    border-radius: 5px;
+    width: 0;
   }
 
   .progressFull {
-    border-radius: 10px;
-    background: #F4AC32;
+    border-radius: 5px;
+    background: white;
   }
 }

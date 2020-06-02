@@ -5,8 +5,7 @@
   margin-bottom: 1.5rem;
   width: 100%;
   font-size: 1.9rem;
-  border: 0.1rem solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: white;
 }
 
@@ -16,7 +15,6 @@
 .incorrect {
   cursor: pointer;
   background-color: white;
-  transform: translateX(-0.15rem);
   transition: 300ms;
 
   .choice-prefix {
@@ -37,18 +35,22 @@
   }
 }
 
-.choice-prefix {
-  padding: 1.5rem 2.5rem;
-  background-color: #F4AC32;
-  border-radius: 10px 0 0 10px;
-}
+.choices {
+  .choice-prefix {
+    color: black;
+    padding: 1.5rem 2.5rem;
+    background-color: #F4AC32;
+    border-radius: 5px 0 0 5px;
+  }
 
-.choice-text {
-  padding: 1.5rem;
-  width: 100%;
+  .choice-text {
+    color: black;
+    padding: 1.5rem;
+    width: 100%;
 
-  @include to-xs {
-    font-size: 1.6rem;
+    @include to-xs {
+      font-size: 1.6rem;
+    }
   }
 }
 
